@@ -70,8 +70,15 @@ function App() {
           <option value="6000">Diamond II</option>
           <option value="6000">Diamond I</option>
           <option value="7000">Champion</option>
-
         </select>
+        <input
+          type="number"
+          className="form-control"
+          id="currentMMR"
+          value={currentMMR}
+          onChange={(e) => setCurrentMMR(Number(e.target.value))}
+          placeholder="Enter your current Rank or RP '(MMR)' "
+        />
 
         <label htmlFor="rpPerWin" className="form-label mt-3">Enter RP gained per win</label>
         <input
@@ -83,16 +90,7 @@ function App() {
           placeholder="Enter RP per win"
         />
 
-        <label htmlFor="desiredMMR" className="form-label mt-3">Enter your desired rank MMR</label>
-        <input
-          type="number"
-          className="form-control"
-          id="desiredMMR"
-          value={desiredMMR}
-          onChange={(e) => setDesiredMMR(Number(e.target.value))}
-          placeholder="Enter desired rank MMR"
-        />
-        <label htmlFor="rankDropdown" className="form-label mt-3">Select your desired rank</label>
+        <label htmlFor="desiredMMR" className="form-label mt-3">Enter your desired rank MMR</label>        
         <select
           className="form-control"
           id="rankDropdown"
@@ -108,6 +106,14 @@ function App() {
           <option value="6000">Diamond</option>
           <option value="7000">Champion</option>
         </select>
+        <input
+          type="number"
+          className="form-control"
+          id="desiredMMR"
+          value={desiredMMR}
+          onChange={(e) => setDesiredMMR(Number(e.target.value))}
+          placeholder="Enter desired rank MMR"
+        />
 
         <button 
           className="btn btn-primary mt-3" 
